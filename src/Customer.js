@@ -8,8 +8,8 @@ class Customer extends Component {
   }
 
   componentDidMount() {
-    fetch(`/customers/all`, {
-      method: 'post',
+    fetch(`/customers/`, {
+      method: 'get',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'

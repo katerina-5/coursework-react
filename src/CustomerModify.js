@@ -8,9 +8,11 @@ class CustomerModify extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       //   id: '5c2255ce45ffe514806f4a38',
-      customer: {}
+      customer: [{}]
     };
   }
+
+  _id = null;
 
   //   handleNameChange(e) {
   //     this.setState({ name: e.target.value });
@@ -18,8 +20,8 @@ class CustomerModify extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    fetch(`/customers/:${this._id.value}/update`, {
-      method: 'post',
+    fetch(`/customers/:${this._id.value}/`, {
+      method: 'put',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'

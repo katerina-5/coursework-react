@@ -12,8 +12,8 @@ class CustomerDelete extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    fetch(`/customers/:${this._id.value}/delete`, {
-      method: 'post',
+    fetch(`/customers/:${this._id.value}/`, {
+      method: 'delete',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'

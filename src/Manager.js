@@ -10,7 +10,7 @@ class Manager extends Component {
   }
 
   componentDidMount() {
-    fetch('/managers/all')
+    fetch('/managers/')
       .then(res => {
         console.log(res);
         return res.json();

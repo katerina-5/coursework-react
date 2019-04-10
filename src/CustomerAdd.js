@@ -18,7 +18,7 @@ class CustomerAdd extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    fetch('/customers/create', {
+    fetch('/customers/', {
       method: 'post',
       headers: {
         Accept: 'application/json',

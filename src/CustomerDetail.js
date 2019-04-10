@@ -13,22 +13,23 @@ class CustomerDetail extends Component {
   handleSubmit(event) {
     event.preventDefault();
     fetch(`/customers/:${this._id.value}`, {
-      method: 'post',
+      method: 'get',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        _id: this._id.value
-      })
+      // body: JSON.stringify({
+      //   _id: this._id.value
+      // })
     }).then(response => {
       if (response.status === 500) {
         alert('500 Internal server error!');
         // alert(response.statusText);
       }
+      alert(this._id.value);
       response.json().then(customer => {
-        alert(customer._id + '\n' + customer.name + ' ' + customer.surname);
         this.setState({ customer });
+        alert(customer._id + '\n' + customer.name + ' ' + customer.surname);
       });
     });
   }
